@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wattpad Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .navbar {
+      background-color: #ff500a;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar ul li:hover {
+      opacity: 0.8;
+    }
+
+    .content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .navbar ul {
+        flex-direction: column;
+        background-color: #ff500a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        display: none;
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Wattpad</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li>Beranda</li>
+      <li>Perpustakaan</li>
+      <li>Cerita Saya</li>
+      <li>Pemberitahuan</li>
+      <li>Profil</li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>Selamat datang di Wattpad</h1>
+    <p>Jelajahi dan baca cerita favoritmu!</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
